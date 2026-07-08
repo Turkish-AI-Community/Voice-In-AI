@@ -1,6 +1,52 @@
-# 🎙️ Sıfırdan İleri Seviye: Ses Teknolojileri & AI ile Voice/Speech Eğitim Planı
+# 🎙️ Sıfırdan İleri Seviye: Ses Teknolojileri & AI ile Voice/Speech Eğitimi
 
 > **Hedef:** Sesin fiziğinden başlayarak DSP, ses işleme, özellik mühendisliği, derin öğrenme tabanlı ses modelleri, ASR, TTS, VAD, Voice Cloning, Foundation Models ve MLOps'a kadar kapsamlı, açık kaynaklı, all-in-one eğitim reposu.
+
+
+---
+
+## 🔧 Ortam Kurulumu
+
+* Eğer [uv](https://docs.astral.sh/uv/getting-started/installation/) kurulu değilse kurun 
+
+```bash
+# 1. uv'yi yükle
+
+# macOS / Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Windows (PowerShell)
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# Alternatif (pip ile)
+pip install uv
+
+# Kurulumu doğrulayın
+uv --version
+```
+
+* Projeyi klonlayın.
+
+```bash
+git clone https://github.com/Turkish-AI-Community/Voice-In-AI.git
+cd Voice-In-AI
+```
+
+* Sanal ortamı oluşturun ve bağımlılıkları kurun.
+
+```bash
+uv sync
+```
+
+* Sanal ortamı aktifleştirin.
+
+```bash
+# Linux / macOS
+source .venv/bin/activate
+
+# Windows (PowerShell)
+.venv\Scripts\activate
+```
 
 ---
 
@@ -787,190 +833,6 @@ audio-ai-course/
 
 ---
 
-## 📚 Modeller-Makaleler Klasörü
-
-```
-modeller-makaleler/
-│
-├── asr/
-│   ├── whisper_paper.md          # Detaylı okuma notları
-│   ├── wav2vec2_paper.md
-│   ├── hubert_paper.md
-│   ├── rnnt_paper.md
-│   ├── deepspeech2_paper.md
-│   └── conformer_paper.md
-│
-├── tts/
-│   ├── tacotron2_paper.md
-│   ├── fastspeech2_paper.md
-│   ├── vits_paper.md
-│   ├── hifigan_paper.md
-│   └── styletts2_paper.md
-│
-├── vad/
-│   ├── silero_vad.md
-│   └── pyannote_vad.md
-│
-├── voice_cloning/
-│   ├── sv2tts_paper.md
-│   ├── yourtts_paper.md
-│   └── openvoice_paper.md
-│
-├── foundation_models/
-│   ├── wavlm_paper.md
-│   ├── data2vec_paper.md
-│   └── superb_paper.md
-│
-├── multimodal/
-│   ├── clap_paper.md
-│   ├── audiollm_paper.md
-│   └── soundstorm_paper.md
-│
-└── klasik_yontemler/
-    ├── hmm_gmm.md
-    ├── mfcc_history.md
-    └── dtw.md
-```
-
----
-
-## 🛠️ Teknolojiler Klasörü
-
-```
-teknolojiler/
-│
-├── kutuphaneler/
-│   ├── librosa_rehber.ipynb
-│   ├── soundfile_rehber.ipynb
-│   ├── torchaudio_rehber.ipynb
-│   ├── huggingface_ses_rehber.ipynb
-│   ├── pyannote_rehber.ipynb
-│   ├── espnet_rehber.ipynb
-│   └── nemo_rehber.ipynb
-│
-├── framework_karsilastirma/
-│   ├── asr_framework_karsilastirma.md
-│   ├── tts_framework_karsilastirma.md
-│   └── diarization_framework_karsilastirma.md
-│
-├── deployment_araclari/
-│   ├── faster_whisper_rehber.ipynb
-│   ├── whisper_cpp_rehber.md
-│   ├── triton_ses_rehber.ipynb
-│   └── onnxruntime_ses_rehber.ipynb
-│
-└── veri_setleri/
-    ├── veri_setleri_rehber.md
-    ├── librispeech.md
-    ├── common_voice.md
-    ├── vctk.md
-    ├── ljspeech.md
-    └── turkce_veri_setleri.md
-```
-
-### Temel Kütüphaneler
-
-| Kütüphane | Amaç | Notlar |
-|---|---|---|
-| librosa | Ses analizi, özellik çıkarma | Temel kütüphane |
-| soundfile | Ses okuma/yazma | WAV, FLAC vb. |
-| torchaudio | PyTorch ses kütüphanesi | GPU desteği |
-| transformers (HF) | Pretrained modeller | Whisper, wav2vec2, vb. |
-| pyannote.audio | Diarization, VAD | SOTA pipeline |
-| ESPnet | ASR, TTS, SE | Araştırma odaklı |
-| NVIDIA NeMo | ASR, TTS, NLP | Production odaklı |
-| Coqui TTS | TTS, voice cloning | Açık kaynak XTTS |
-| silero-vad | Hafif VAD | Edge uyumlu |
-| faster-whisper | Hızlı ASR inference | CTranslate2 backend |
-| pydub | Ses manipülasyon | Kolay API |
-| pedalboard | Audio efektler | Spotify'dan |
-
----
-
-## 🎬 YouTube Video Serisi Planı
-
-### Seri 1: Ses Fiziği ve DSP (5 Video)
-| # | Başlık | Modül |
-|---|---|---|
-| 1 | Sesin Yapısı: Frekans, Genlik, Örnekleme | Modül 1 |
-| 2 | Fourier Dönüşümü Sezgisel: "Sesi Parçalara Ayırmak" | Modül 2 |
-| 3 | FFT ve Spektrogram: Sesin Görsel Temsili | Modül 2 |
-| 4 | Filtreler: Sesi Şekillendirmek | Modül 2 |
-| 5 | STFT: Zamanla Değişen Sesi Analiz Etmek | Modül 2-3 |
-
-### Seri 2: Özellik Mühendisliği (4 Video)
-| # | Başlık | Modül |
-|---|---|---|
-| 6 | MFCC Nedir? Adım Adım Mel Cepstral Coefficients | Modül 4 |
-| 7 | Mel Spektrogram: İnsan Kulağını Taklit Etmek | Modül 4 |
-| 8 | Pitch Tracking ve Temel Frekans Tespiti | Modül 4 |
-| 9 | Ses Veri Artırma Teknikleri: SpecAugment ve Daha Fazlası | Modül 3-4 |
-
-### Seri 3: Derin Öğrenme Mimarileri (5 Video)
-| # | Başlık | Modül |
-|---|---|---|
-| 10 | Sesle CNN: Spektrogram Üzerinde Görsel Öğrenme | Modül 6 |
-| 11 | CTC Loss: Ses Tanıma için Kayıp Fonksiyonu | Modül 6 |
-| 12 | Conformer Mimarisi: CNN + Transformer = ? | Modül 6 |
-| 13 | RNN-T (Transducer): Streaming ASR'nin Temeli | Modül 8 |
-| 14 | Diffusion Modelleri Ses için Nasıl Çalışır? | Modül 6 |
-
-### Seri 4: ASR (6 Video)
-| # | Başlık | Modül |
-|---|---|---|
-| 15 | Whisper Mimarisi Derinlemesine İnceleme | Modül 8 |
-| 16 | Whisper ile Türkçe ASR ve Fine-Tuning | Modül 8 |
-| 17 | wav2vec 2.0: Self-Supervised ile Konuşma Tanıma | Modül 8 |
-| 18 | HuBERT: Öz-Gözetimli Ses Öğrenimi | Modül 8 |
-| 19 | NVIDIA NeMo ile Production ASR | Modül 8 |
-| 20 | Gerçek Zamanlı (Streaming) ASR Pipeline Kurmak | Modül 8 + 16 |
-
-### Seri 5: TTS (5 Video)
-| # | Başlık | Modül |
-|---|---|---|
-| 21 | Tacotron 2: Metinden Sese Klasik Yaklaşım | Modül 9 |
-| 22 | FastSpeech 2: Non-Autoregressive TTS | Modül 9 |
-| 23 | VITS: End-to-End Gerçekçi TTS | Modül 9 |
-| 24 | HiFi-GAN Vocoder: Yüksek Kaliteli Ses Sentezi | Modül 9 |
-| 25 | Türkçe TTS Fine-Tuning: Sıfırdan Türkçe Ses Sentezi | Modül 9 |
-
-### Seri 6: Voice Cloning (4 Video)
-| # | Başlık | Modül |
-|---|---|---|
-| 26 | Speaker Embedding: Bir Sesi Vektöre Sıkıştırmak | Modül 10 |
-| 27 | XTTS ile Türkçe Ses Klonlama | Modül 10 |
-| 28 | Tortoise TTS: Yüksek Kaliteli Zero-Shot Klonlama | Modül 10 |
-| 29 | Deepfake Ses Tespiti ve Etik | Modül 10 |
-
-### Seri 7: Diarization ve Sınıflandırma (4 Video)
-| # | Başlık | Modül |
-|---|---|---|
-| 30 | VAD: Seste Konuşma Var mı? Silero ve pyannote | Modül 7 |
-| 31 | Speaker Diarization: Kim Ne Zaman Konuştu? | Modül 11 |
-| 32 | PANNs ile Ses Olayı Tespiti | Modül 12 |
-| 33 | EEND: End-to-End Neural Diarization | Modül 11 |
-
-### Seri 8: Foundation Models ve Multimodal (5 Video)
-| # | Başlık | Modül |
-|---|---|---|
-| 34 | Ses Foundation Modelleri: SSL Paradigması | Modül 14 |
-| 35 | WavLM: Full-Stack Ses İşleme için SSL | Modül 14 |
-| 36 | CLAP: Ses ve Metni Birleştirmek | Modül 15 |
-| 37 | AudioLM ve SoundStorm: Ses Dil Modelleri | Modül 15 |
-| 38 | GPT-4o ile Sesli Uygulamalar Geliştirmek | Modül 15 |
-
-### Seri 9: MLOps ve Deployment (4 Video)
-| # | Başlık | Modül |
-|---|---|---|
-| 39 | Distil-Whisper: Bilgi Damıtma ile Hızlı ASR | Modül 16 |
-| 40 | Ses API'si Kurmak: FastAPI + Streaming | Modül 16 |
-| 41 | Edge'de ASR: whisper.cpp ve faster-whisper | Modül 16 |
-| 42 | Ses Modellerinde Monitoring ve MLOps | Modül 16 |
-
-**Toplam: 42 Video**
-
----
-
 ## 📊 Öğrenme Yolu (Learning Path)
 
 ```
@@ -1026,44 +888,6 @@ Klasik ML            Derin Öğrenme
 
 ---
 
-## 🔧 Ortam Kurulumu
-
-```bash
-# Conda ortamı
-conda create -n audio-ai python=3.10
-conda activate audio-ai
-
-# Core kütüphaneler
-pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu118
-pip install librosa soundfile transformers datasets
-pip install pyannote.audio faster-whisper
-pip install TTS  # Coqui TTS
-pip install nemo_toolkit['asr']
-pip install jupyter notebook ipywidgets
-pip install matplotlib seaborn plotly
-pip install fastapi uvicorn websockets
-pip install onnxruntime onnx
-```
-
----
-
-## 📈 Değerlendirme Metrikleri Referans Tablosu
-
-| Görev | Metrik | Açıklama |
-|---|---|---|
-| ASR | WER | Word Error Rate |
-| ASR | CER | Character Error Rate |
-| TTS | MOS | Mean Opinion Score (subjektif) |
-| TTS | UTMOS | Otomatik MOS tahmini |
-| TTS | WER on synth | Sentezlenen sesin anlaşılırlığı |
-| VAD | FAR / FRR | False Accept/Reject Rate |
-| Diarization | DER | Diarization Error Rate |
-| Speaker Verif. | EER | Equal Error Rate |
-| Ses Sınıf. | mAP | mean Average Precision |
-| SED | PSDS | Polyphonic SED Detection Score |
-
----
-
 ## 🌐 Önerilen Veri Setleri
 
 | Veri Seti | Görev | Dil | Boyut |
@@ -1081,4 +905,11 @@ pip install onnxruntime onnx
 
 ---
 
+## 📄 Lisans (License)
+
 *Bu plan açık kaynak topluluk katkılarına açıktır. Her modül bağımsız öğrenilebilecek şekilde tasarlanmıştır.*
+
+Bu proje karma (dual) bir lisanslama modeli kullanmaktadır:
+
+*   **Kodlar:** Bu depodaki (repo) tüm kaynak kodlar, Python scriptleri, Jupyter Notebook hücrelerindeki çalıştırılabilir kodlar ve API yapılandırmaları **[MIT Lisansı](LICENSE)** altında korunmaktadır. Ticari amaçlar da dahil olmak üzere özgürce kullanılabilir, değiştirilebilir ve dağıtılabilir.
+*   **Eğitim İçerikleri ve Metinler:** Projede yer alan teorik anlatımlar, YouTube video planları, makale inceleme notları, müfredat yapısı ve görseller **[Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](LICENSE_CONTENT)** lisansına tabidir. 
