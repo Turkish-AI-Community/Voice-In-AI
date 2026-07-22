@@ -105,7 +105,7 @@ audio-ai-course/
 #### Konular
 - Ses nedir? Mekanik dalga, basınç dalgası
 - Frekans, genlik, faz, dalga boyu
-- İnsan işitme sistemi ve algı (psikоакустik giriş)
+- İnsan işitme sistemi ve algı (psikoakustik giriş)
 - Desibel (dB) ve ses şiddeti
 - Mono, Stereo, Multichannel ses
 - Dijital ses temelleri: örnekleme (sampling), kuantalama (quantization)
@@ -114,11 +114,13 @@ audio-ai-course/
 - Ses formatları: WAV, MP3, FLAC, OGG, AAC — farklar ve kayıp/kayıpsız sıkıştırma
 
 #### Dosyalar
-```
+```python
 01_ses_fizigi/
-├── 01_ses_nedir.ipynb
-├── 02_dijital_ses_temelleri.ipynb
-├── 03_ses_formatlari.ipynb
+├── 01_ses_nedir.ipynb                    
+├── 02_isitme_ve_psikoakustik.ipynb       
+├── 03_konusma_uretimi.ipynb              
+├── 04_dijital_ses_temelleri.ipynb        
+├── 05_ses_formatlari.ipynb               
 └── assets/
 ```
 
